@@ -18,9 +18,9 @@ class Degrader:
 
 		self.degrading = True
 
-		self.image = image.filter(ImageFilter.BLUR)
+		self.image = self.image.filter(ImageFilter.BLUR)
 
-		self.image.save(outresult.img, "JPEG")
+		self.image.save("outresult.img", "JPEG")
 
 		self.degrading = False
 		return True
@@ -31,4 +31,5 @@ class Degrader:
 			self.image = Image.open(path)
 		except IOError:
 			print "could not load file"
+			print IOError
 
