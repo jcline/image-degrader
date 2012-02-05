@@ -5,32 +5,30 @@ import ImageFilter
 class Degrader:
 	"""A class for degrading images visually"""
 
-	image = None
-	degrading = False
+	def __init__(self):
+		self.image = None
+		self.degrading = False
 
 	def degrade(self):
 
-		if degrading:
+		if self.degrading:
 			return False
-		if image == None:
+		if self.image == None:
 			return False
 
-		degrading = True
+		self.degrading = True
 
-		image = image.filter(ImageFilter.BLUR)
+		self.image = image.filter(ImageFilter.BLUR)
 
-		image.save(outresult.img, "JPEG")
+		self.image.save(outresult.img, "JPEG")
 
-		degrading = False
+		self.degrading = False
 		return True
 
 	def loadImage(self, path):
 
 		try:
-			image = Image.open(path)
+			self.image = Image.open(path)
 		except IOError:
 			print "could not load file"
-
-		return
-
 
