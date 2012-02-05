@@ -11,9 +11,9 @@ class Degrader:
 	def degrade(self):
 
 		if degrading:
-			return
+			return False
 		if image == None:
-			return
+			return False
 
 		degrading = True
 
@@ -22,7 +22,7 @@ class Degrader:
 		image.save(outresult.img, "JPEG")
 
 		degrading = False
-		return
+		return True
 
 	def loadImage(self, path):
 
