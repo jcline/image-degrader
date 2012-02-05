@@ -6,13 +6,22 @@ class Degrader:
 	"""A class for degrading images visually"""
 
 	image = None
+	degrading = False
 
 	def degrade(self):
+
+		if degrading:
+			return
+		if image == None:
+			return
+
+		degrading = True
 
 		image = image.filter(ImageFilter.BLUR)
 
 		image.save(outresult.img, "JPEG")
 
+		degrading = False
 		return
 
 	def loadImage(self, path):
